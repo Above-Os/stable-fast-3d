@@ -92,7 +92,7 @@ RUN --mount=type=cache,target=/root/.cache/pip \
     pip list \
     && pip install -U setuptools==69.5.1 \
     && pip install wheel \
-    && pip install
+    && pip install torch
          
 
 # 绑定环境变量 (依赖库 .so 文件)
