@@ -13,6 +13,8 @@ LABEL maintainer="YAN Wenkun <code@yanwk.fun>"
 
 RUN set -eu
 
+COPY . .
+
 ################################################################################
 # Python 及工具
 # 利用 openSUSE 软件仓库的 PIP 包，以确保兼容性以及更多的系统级支持。后续仍可使用 PIP 更新。
@@ -112,7 +114,7 @@ RUN --mount=type=cache,target=/root/.cache/pip \
 # 2. 处理 ONNX Runtime 报错 "missing CUDA provider"，并添加 CUDA 12 支持，参考： https://onnxruntime.ai/docs/install/
 # 3. 接上，处理 MediaPipe's 的依赖项错误（需要 protobuf<4）
 
-COPY . .
+
 RUN --mount=type=cache,target=/root/.cache/pip \
     pip install -r /requirements-demo.txt
 
