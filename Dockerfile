@@ -114,7 +114,7 @@ RUN --mount=type=cache,target=/root/.cache/pip \
 
 
 RUN --mount=type=cache,target=/root/.cache/pip \
-    pip install -r /requirements-demo.txt
+    pip install -r /root/requirements-demo.txt
 
 ################################################################################
 
@@ -136,4 +136,4 @@ RUN --mount=type=cache,target=/root/.cache/pip \
 ################################################################################
  
 ENV CLI_ARGS=""
-CMD ["python3","gradio_app.py"]
+CMD ["python3","/root/gradio_app.py"]
