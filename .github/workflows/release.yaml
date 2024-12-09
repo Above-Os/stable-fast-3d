@@ -39,4 +39,4 @@ jobs:
                 file: ./Dockerfile
                 push: true
                 tags: beclab/stable-fast-3d:${{env.TAG}}
-                platforms: linux/amd64
+                platforms: linux/amd64,linux/arm64
