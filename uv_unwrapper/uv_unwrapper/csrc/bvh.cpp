@@ -8,6 +8,14 @@
 #include <tuple>
 
 namespace UVUnwrapper {
+
+template<class T, class U = T>
+T exchange(T& obj, U&& new_value) {
+    T old_value = std::move(obj);
+    obj = std::forward<U>(new_value);
+    return old_value;
+}
+
 BVH::BVH(Triangle *tri, int *actual_idx, const size_t &num_indices) {
   // Copty tri to triangle
   triangle = new Triangle[num_indices];
@@ -42,10 +50,10 @@ BVH::BVH(const BVH &other)
     : BVH(other.triangle, other.triIdx, other.triCount) {}
 
 BVH::BVH(BVH &&other) noexcept // move constructor
-    : triIdx(std::exchange(other.triIdx, nullptr)),
-      actualIdx(std::exchange(other.actualIdx, nullptr)),
-      triangle(std::exchange(other.triangle, nullptr)),
-      bvhNode(std::exchange(other.bvhNode, nullptr)) {}
+    : triIdx(exchange(other.triIdx, nullptr)),
+      actualIdx(exchange(other.actualIdx, nullptr)),
+      triangle(exchange(other.triangle, nullptr)),
+      bvhNode(exchange(other.bvhNode, nullptr)) {}
 
 BVH &BVH::operator=(const BVH &other) // copy assignment
 {
