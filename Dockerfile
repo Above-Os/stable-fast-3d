@@ -112,8 +112,7 @@ ENV LD_LIBRARY_PATH="${LD_LIBRARY_PATH}\
 # 2. 处理 ONNX Runtime 报错 "missing CUDA provider"，并添加 CUDA 12 支持，参考： https://onnxruntime.ai/docs/install/
 # 3. 接上，处理 MediaPipe's 的依赖项错误（需要 protobuf<4）
 RUN --mount=type=cache,target=/root/.cache/pip \
-    pip install \
-        -r requirements-demo.txt  \
+    pip install -r ./requirements-demo.txt  \
     && pip list
 
 ################################################################################
