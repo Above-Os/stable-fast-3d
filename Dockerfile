@@ -82,13 +82,15 @@ python312-matplotlib \
 #     && update-alternatives --install /usr/bin/gcov-tool gcov-tool /usr/bin/gcov-tool-13 90 
 
 ################################################################################
+
 # Python 包
 
 # PyTorch, xFormers
 RUN --mount=type=cache,target=/root/.cache/pip \
     pip list \
     && pip install -U setuptools==69.5.1 \
-    && pip install wheel
+    && pip install wheel \
+    && pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
          
 
 # 绑定环境变量 (依赖库 .so 文件)
