@@ -56,7 +56,7 @@ python312-matplotlib \
     python312-svglib \
     python312-tqdm \
     libgthread-2_0-0 \
-    python312-torch \
+    git \
     make \
     && rm /usr/lib64/python3.12/EXTERNALLY-MANAGED \
     && update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.12 100
