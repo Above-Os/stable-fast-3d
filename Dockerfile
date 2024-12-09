@@ -93,7 +93,7 @@ ENV LD_LIBRARY_PATH="${LD_LIBRARY_PATH}\
 
 
 RUN --mount=type=cache,target=/root/.cache/pip \
-    pip install -r /root/requirements.txt
+    pip install -r requirements.txt
 
 ################################################################################
 
@@ -115,4 +115,4 @@ RUN --mount=type=cache,target=/root/.cache/pip \
 ################################################################################
  
 ENV CLI_ARGS=""
-CMD ["python3","/root/gradio_app.py"]
+CMD ["python3","./gradio_app.py"]
