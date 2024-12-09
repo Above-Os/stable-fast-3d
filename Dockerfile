@@ -72,20 +72,20 @@ RUN --mount=type=cache,target=/root/.cache/pip \
          
 
 # 绑定环境变量 (依赖库 .so 文件)
-ENV LD_LIBRARY_PATH="${LD_LIBRARY_PATH}\
-:/usr/local/lib64/python3.12/site-packages/torch/lib\
-:/usr/local/lib/python3.12/site-packages/nvidia/cuda_cupti/lib\
-:/usr/local/lib/python3.12/site-packages/nvidia/cuda_runtime/lib\
-:/usr/local/lib/python3.12/site-packages/nvidia/cudnn/lib\
-:/usr/local/lib/python3.12/site-packages/nvidia/cufft/lib\
-:/usr/local/lib/python3.12/site-packages/nvidia/cublas/lib\
-:/usr/local/lib/python3.12/site-packages/nvidia/cuda_nvrtc/lib\
-:/usr/local/lib/python3.12/site-packages/nvidia/curand/lib\
-:/usr/local/lib/python3.12/site-packages/nvidia/cusolver/lib\
-:/usr/local/lib/python3.12/site-packages/nvidia/cusparse/lib\
-:/usr/local/lib/python3.12/site-packages/nvidia/nccl/lib\
-:/usr/local/lib/python3.12/site-packages/nvidia/nvjitlink/lib\
-:/usr/local/lib/python3.12/site-packages/nvidia/nvtx/lib"
+# ENV LD_LIBRARY_PATH="${LD_LIBRARY_PATH}\
+# :/usr/local/lib64/python3.12/site-packages/torch/lib\
+# :/usr/local/lib/python3.12/site-packages/nvidia/cuda_cupti/lib\
+# :/usr/local/lib/python3.12/site-packages/nvidia/cuda_runtime/lib\
+# :/usr/local/lib/python3.12/site-packages/nvidia/cudnn/lib\
+# :/usr/local/lib/python3.12/site-packages/nvidia/cufft/lib\
+# :/usr/local/lib/python3.12/site-packages/nvidia/cublas/lib\
+# :/usr/local/lib/python3.12/site-packages/nvidia/cuda_nvrtc/lib\
+# :/usr/local/lib/python3.12/site-packages/nvidia/curand/lib\
+# :/usr/local/lib/python3.12/site-packages/nvidia/cusolver/lib\
+# :/usr/local/lib/python3.12/site-packages/nvidia/cusparse/lib\
+# :/usr/local/lib/python3.12/site-packages/nvidia/nccl/lib\
+# :/usr/local/lib/python3.12/site-packages/nvidia/nvjitlink/lib\
+# :/usr/local/lib/python3.12/site-packages/nvidia/nvtx/lib"
 
 
 # 1. 安装 ComfyUI 及扩展的依赖项
