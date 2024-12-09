@@ -56,6 +56,7 @@ python312-matplotlib \
     python312-svglib \
     python312-tqdm \
     libgthread-2_0-0 \
+    python312-torch \
     make \
     && rm /usr/lib64/python3.12/EXTERNALLY-MANAGED \
     && update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.12 100
@@ -91,7 +92,7 @@ RUN --mount=type=cache,target=/root/.cache/pip \
     pip list \
     && pip install -U setuptools==69.5.1 \
     && pip install wheel \
-    && pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
+    && pip install
          
 
 # 绑定环境变量 (依赖库 .so 文件)
