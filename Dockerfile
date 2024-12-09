@@ -32,6 +32,7 @@ RUN --mount=type=cache,target=/var/cache/zypp \
 python312-devel \
 python312-pip \
 python312-wheel \
+python312-setuptools \ 
     git \
     make \
     && rm /usr/lib64/python3.12/EXTERNALLY-MANAGED \
