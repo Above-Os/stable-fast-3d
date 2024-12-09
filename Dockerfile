@@ -28,15 +28,12 @@ python312-devel \
 python312-pip \
 python312-wheel \
 python312-setuptools \
-python312-Cython \
 python312-py-build-cmake \
 python312-aiohttp \
 python312-dbm \
-python312-ffmpeg-python \
 python312-GitPython \
 python312-httpx \
 python312-joblib \
-python312-lark \
 python312-matplotlib \
     python312-mpmath \
     python312-numba-devel \
@@ -54,10 +51,6 @@ python312-matplotlib \
     python312-svglib \
     python312-tqdm \
     libgthread-2_0-0 \
-make \
-fish \
-fd \
-vim \
     && rm /usr/lib64/python3.12/EXTERNALLY-MANAGED \
     && update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.12 100
 
@@ -143,4 +136,4 @@ VOLUME /root
 WORKDIR /root
 EXPOSE 7860
 ENV CLI_ARGS=""
-CMD ["python","gradio_app.py"]
+CMD ["python3","gradio_app.py"]
