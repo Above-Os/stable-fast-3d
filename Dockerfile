@@ -114,7 +114,7 @@ RUN --mount=type=cache,target=/root/.cache/pip \
 
 
 RUN --mount=type=cache,target=/root/.cache/pip \
-    pip install -r /root/requirements-demo.txt
+    pip install -r /root/requirements.txt
 
 ################################################################################
 
