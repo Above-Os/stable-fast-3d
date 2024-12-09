@@ -92,20 +92,20 @@ RUN --mount=type=cache,target=/root/.cache/pip \
          
 
 # 绑定环境变量 (依赖库 .so 文件)
-ENV LD_LIBRARY_PATH="${LD_LIBRARY_PATH}\
+#ENV LD_LIBRARY_PATH="${LD_LIBRARY_PATH}\
 #:/usr/local/lib64/python3.12/site-packages/torch/lib\
-:/usr/local/lib/python3.12/site-packages/nvidia/cuda_cupti/lib\
-:/usr/local/lib/python3.12/site-packages/nvidia/cuda_runtime/lib\
-:/usr/local/lib/python3.12/site-packages/nvidia/cudnn/lib\
-:/usr/local/lib/python3.12/site-packages/nvidia/cufft/lib\
-:/usr/local/lib/python3.12/site-packages/nvidia/cublas/lib\
-:/usr/local/lib/python3.12/site-packages/nvidia/cuda_nvrtc/lib\
-:/usr/local/lib/python3.12/site-packages/nvidia/curand/lib\
-:/usr/local/lib/python3.12/site-packages/nvidia/cusolver/lib\
-:/usr/local/lib/python3.12/site-packages/nvidia/cusparse/lib\
-:/usr/local/lib/python3.12/site-packages/nvidia/nccl/lib\
-:/usr/local/lib/python3.12/site-packages/nvidia/nvjitlink/lib\
-:/usr/local/lib/python3.12/site-packages/nvidia/nvtx/lib"
+# :/usr/local/lib/python3.12/site-packages/nvidia/cuda_cupti/lib\
+# :/usr/local/lib/python3.12/site-packages/nvidia/cuda_runtime/lib\
+# :/usr/local/lib/python3.12/site-packages/nvidia/cudnn/lib\
+# :/usr/local/lib/python3.12/site-packages/nvidia/cufft/lib\
+# :/usr/local/lib/python3.12/site-packages/nvidia/cublas/lib\
+# :/usr/local/lib/python3.12/site-packages/nvidia/cuda_nvrtc/lib\
+# :/usr/local/lib/python3.12/site-packages/nvidia/curand/lib\
+# :/usr/local/lib/python3.12/site-packages/nvidia/cusolver/lib\
+# :/usr/local/lib/python3.12/site-packages/nvidia/cusparse/lib\
+# :/usr/local/lib/python3.12/site-packages/nvidia/nccl/lib\
+# :/usr/local/lib/python3.12/site-packages/nvidia/nvjitlink/lib\
+# :/usr/local/lib/python3.12/site-packages/nvidia/nvtx/lib"
 
 
 # 1. 安装 ComfyUI 及扩展的依赖项
@@ -119,18 +119,18 @@ RUN --mount=type=cache,target=/root/.cache/pip \
 
 # 使用国内下载源
 
-RUN --mount=type=cache,target=/var/cache/zypp \
-    zypper modifyrepo --disable --all \
-    && zypper addrepo --check --refresh --gpgcheck \
-        'https://mirrors.tuna.tsinghua.edu.cn/opensuse/tumbleweed/repo/oss/' mirror-oss \
-    && zypper addrepo --check --refresh --gpgcheck \
-        'https://mirrors.tuna.tsinghua.edu.cn/opensuse/tumbleweed/repo/non-oss/' mirror-non-oss \
-    && zypper addrepo --check --refresh --priority 90 \
-        'https://mirrors.tuna.tsinghua.edu.cn/packman/suse/openSUSE_Tumbleweed/Essentials/' mirror-packman-essentials
+# RUN --mount=type=cache,target=/var/cache/zypp \
+#     zypper modifyrepo --disable --all \
+#     && zypper addrepo --check --refresh --gpgcheck \
+#         'https://mirrors.tuna.tsinghua.edu.cn/opensuse/tumbleweed/repo/oss/' mirror-oss \
+#     && zypper addrepo --check --refresh --gpgcheck \
+#         'https://mirrors.tuna.tsinghua.edu.cn/opensuse/tumbleweed/repo/non-oss/' mirror-non-oss \
+#     && zypper addrepo --check --refresh --priority 90 \
+#         'https://mirrors.tuna.tsinghua.edu.cn/packman/suse/openSUSE_Tumbleweed/Essentials/' mirror-packman-essentials
 
-ENV PIP_INDEX_URL="https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple"
+# ENV PIP_INDEX_URL="https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple"
         
-ENV HF_ENDPOINT="https://hf-mirror.com"
+# ENV HF_ENDPOINT="https://hf-mirror.com"
 
 ################################################################################
  
