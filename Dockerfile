@@ -13,6 +13,11 @@ LABEL maintainer="YAN Wenkun <code@yanwk.fun>"
 
 RUN set -eu
 
+USER root
+VOLUME /root
+WORKDIR /root
+EXPOSE 7860
+
 COPY . .
 
 ################################################################################
@@ -130,10 +135,5 @@ RUN --mount=type=cache,target=/root/.cache/pip \
 
 ################################################################################
  
-
-USER root
-VOLUME /root
-WORKDIR /root
-EXPOSE 7860
 ENV CLI_ARGS=""
 CMD ["python3","gradio_app.py"]
