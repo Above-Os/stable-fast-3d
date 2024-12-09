@@ -29,37 +29,12 @@ RUN --mount=type=cache,target=/var/cache/zypp \
         'https://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Tumbleweed/Essentials/' packman-essentials \
     && zypper --gpg-auto-import-keys \
         install --no-confirm --auto-agree-with-licenses \
-python312-devel \
-python312-pip \
-python312-wheel \
-python312-setuptools \
-python312-py-build-cmake \
-python312-aiohttp \
-python312-dbm \
-python312-GitPython \
-python312-httpx \
-python312-joblib \
-python312-matplotlib \
-    python312-mpmath \
-    python312-numba-devel \
-    python312-numpy1 \
-    python312-onnx \
-    python312-opencv \
-    python312-pandas \
-    python312-qrcode \
-    python312-rich \
-    python312-scikit-build \
-    python312-scikit-build-core-pyproject \
-    python312-scikit-image \
-    python312-scikit-learn \
-    python312-scipy \
-    python312-svglib \
-    python312-tqdm \
-    libgthread-2_0-0 \
+python311-devel \
+python311-pip \
     git \
     make \
-    && rm /usr/lib64/python3.12/EXTERNALLY-MANAGED \
-    && update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.12 100
+    && rm /usr/lib64/python3.11/EXTERNALLY-MANAGED \
+    && update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.11 100
 
 ################################################################################
 # GCC 13 
@@ -68,20 +43,20 @@ python312-matplotlib \
 RUN --mount=type=cache,target=/var/cache/zypp \
     zypper --gpg-auto-import-keys \
         install --no-confirm --auto-agree-with-licenses \
-gcc14 \
-gcc14-c++ \
-cpp14 \
-    && update-alternatives --install /usr/bin/c++ c++ /usr/bin/g++-14 90 \
-    && update-alternatives --install /usr/bin/cc  cc  /usr/bin/gcc-14 90 \
-    && update-alternatives --install /usr/bin/cpp cpp /usr/bin/cpp-14 90 \
-    && update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-14 90 \
-    && update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-14 90 \
-    && update-alternatives --install /usr/bin/gcc-ar gcc-ar /usr/bin/gcc-ar-14 90 \
-    && update-alternatives --install /usr/bin/gcc-nm gcc-nm /usr/bin/gcc-nm-14 90 \
-    && update-alternatives --install /usr/bin/gcc-ranlib gcc-ranlib /usr/bin/gcc-ranlib-14 90 \
-    && update-alternatives --install /usr/bin/gcov gcov /usr/bin/gcov-14 90 \
-    && update-alternatives --install /usr/bin/gcov-dump gcov-dump /usr/bin/gcov-dump-14 90 \
-    && update-alternatives --install /usr/bin/gcov-tool gcov-tool /usr/bin/gcov-tool-14 90 
+gcc13 \
+gcc13-c++ \
+cpp13 \
+    && update-alternatives --install /usr/bin/c++ c++ /usr/bin/g++-13 90 \
+    && update-alternatives --install /usr/bin/cc  cc  /usr/bin/gcc-13 90 \
+    && update-alternatives --install /usr/bin/cpp cpp /usr/bin/cpp-13 90 \
+    && update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-13 90 \
+    && update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-13 90 \
+    && update-alternatives --install /usr/bin/gcc-ar gcc-ar /usr/bin/gcc-ar-13 90 \
+    && update-alternatives --install /usr/bin/gcc-nm gcc-nm /usr/bin/gcc-nm-13 90 \
+    && update-alternatives --install /usr/bin/gcc-ranlib gcc-ranlib /usr/bin/gcc-ranlib-13 90 \
+    && update-alternatives --install /usr/bin/gcov gcov /usr/bin/gcov-13 90 \
+    && update-alternatives --install /usr/bin/gcov-dump gcov-dump /usr/bin/gcov-dump-13 90 \
+    && update-alternatives --install /usr/bin/gcov-tool gcov-tool /usr/bin/gcov-tool-13 90 
 
 ################################################################################
 
