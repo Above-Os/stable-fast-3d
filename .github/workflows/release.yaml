@@ -35,10 +35,8 @@ jobs:
               env:
                 TAG: ${{ steps.get-latest-tag.outputs.tag || github.event.inputs.tags || 'latest'}} 
               with:
-                build-args: |
-                  HUGGINGFACE_TOKEN=${{ secrets.HUGGINGFACE_TOKEN }}
                 context: .
-                file: ./Dockerfile
+                file: ./Dockerfile -e HUGGINGFACE_TOKEN=${{ secrets.HUGGINGFACE_TOKEN }}
                 push: true
                 tags: beclab/stable-fast-3d:${{env.TAG}}
                 platforms: linux/amd64
