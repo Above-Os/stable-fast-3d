@@ -12,7 +12,7 @@ on:
 
 jobs:
     release_server:
-        runs-on: self-hosted-amd64
+        runs-on: ubuntu-latest
         steps:
             - name: Check out the repo
               uses: actions/checkout@v3
