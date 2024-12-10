@@ -1,6 +1,6 @@
-import os
-from huggingface_hub import login
-from sf3d import SF3D  # Assuming this is your import
+
+
+from sf3d.system import SF3D
 
 # Load the model
 model = SF3D.from_pretrained(
