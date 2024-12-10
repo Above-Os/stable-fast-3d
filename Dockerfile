@@ -119,7 +119,7 @@ RUN --mount=type=cache,target=/root/.cache/pip \
 
 ################################################################################
  
-RUN python3 download.py
+RUN python3 ./download.py
 
 ENV CLI_ARGS=""
 CMD ["python3","./gradio_app.py"]
