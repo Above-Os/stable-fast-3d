@@ -13,6 +13,9 @@ LABEL maintainer="YAN Wenkun <code@yanwk.fun>"
 
 RUN set -eu
 
+ARG HUGGINGFACE_TOKEN1
+ENV HUGGINGFACE_TOKEN=$HUGGINGFACE_TOKEN1
+
 # USER root
 # VOLUME /root
 # WORKDIR /root
