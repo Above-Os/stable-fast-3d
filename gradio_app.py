@@ -417,4 +417,4 @@ with gr.Blocks() as demo:
         ],
     )
 
-demo.queue().launch(share=False)
+demo.queue().launch(share=True)
