@@ -71,7 +71,8 @@ cpp12 \
 # PyTorch, xFormers
 RUN --mount=type=cache,target=/root/.cache/pip \
     pip list \
-    && pip install -U setuptools==69.5.1 
+    && pip install -U setuptools==69.5.1 \
+    && pip install torch==2.4.1
          
 
 # 绑定环境变量 (依赖库 .so 文件)
