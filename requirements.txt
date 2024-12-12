@@ -12,5 +12,5 @@ git+https://github.com/vork/PyNanoInstantMeshes.git@v0.0.3
 gpytoolbox==0.2.0
 ./texture_baker/
 ./uv_unwrapper/
-gradio==4.41.0
+gradio==4.44.1
 gradio-litmodel3d==0.0.1
