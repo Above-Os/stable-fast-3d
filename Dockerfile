@@ -72,7 +72,8 @@ cpp12 \
 RUN --mount=type=cache,target=/root/.cache/pip \
     pip list \
     && pip install -U setuptools==69.5.1 \
-    && pip install torch==2.4.1
+    && pip install torch==2.4.1 \
+    && pip install numpy==1.26.4
          
 
 # 绑定环境变量 (依赖库 .so 文件)
