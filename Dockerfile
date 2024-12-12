@@ -47,6 +47,7 @@ python310-setuptools \
 # 与 CUDA 12.4 兼容
 
 
+
 RUN --mount=type=cache,target=/var/cache/zypp \
     zypper --gpg-auto-import-keys \
         install --no-confirm --auto-agree-with-licenses \
