@@ -41,7 +41,7 @@ python310-setuptools \
     make \
     ninja \
     which \
-    && rm /usr/lib64/python3.10/EXTERNALLY-MANAGED \
+    #&& rm /usr/lib64/python3.10/EXTERNALLY-MANAGED \
     && update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.10 100
 
 ################################################################################
