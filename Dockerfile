@@ -40,6 +40,7 @@ python311-setuptools \
     git \
     make \
     ninja \
+    which \
     && rm /usr/lib64/python3.11/EXTERNALLY-MANAGED \
     && update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.11 100
 
