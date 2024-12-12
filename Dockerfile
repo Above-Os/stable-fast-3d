@@ -33,14 +33,14 @@ RUN --mount=type=cache,target=/var/cache/zypp \
         'https://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Tumbleweed/Essentials/' packman-essentials \
     && zypper --gpg-auto-import-keys \
         install --no-confirm --auto-agree-with-licenses \
-python312-devel \
-python312-pip \
-python312-wheel \
-python312-setuptools \ 
+python311-devel \
+python311-pip \
+python311-wheel \
+python311-setuptools \ 
     git \
     make \
-    && rm /usr/lib64/python3.12/EXTERNALLY-MANAGED \
-    && update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.12 100
+    && rm /usr/lib64/python3.11/EXTERNALLY-MANAGED \
+    && update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.11 100
 
 ################################################################################
 # GCC 13 
