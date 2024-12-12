@@ -119,6 +119,9 @@ RUN --mount=type=cache,target=/root/.cache/pip \
 
 ################################################################################
  
+RUN --mount=type=cache,target=/root/.cache/pip \ 
+    pip install --upgrade fastapi uvicorn gradio pydantic
+
 RUN python3 ./download.py
 
 ENV CLI_ARGS=""
