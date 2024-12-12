@@ -33,19 +33,18 @@ RUN --mount=type=cache,target=/var/cache/zypp \
         'https://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Tumbleweed/Essentials/' packman-essentials \
     && zypper --gpg-auto-import-keys \
         install --no-confirm --auto-agree-with-licenses \
-python310-devel \
-python310-pip \
-python310-wheel \
-python310-setuptools \ 
+python311-devel \
+python311-pip \
+python311-wheel \
+python311-setuptools \ 
     git \
     make \
-    && rm /usr/lib64/python3.10/EXTERNALLY-MANAGED \
-    && update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.10 100
+    && rm /usr/lib64/python3.11/EXTERNALLY-MANAGED \
+    && update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.11 100
 
 ################################################################################
 # GCC 13 
 # 与 CUDA 12.4 兼容
-
 
 
 RUN --mount=type=cache,target=/var/cache/zypp \
