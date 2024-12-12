@@ -16,7 +16,8 @@ library_name = "texture_baker"
 
 def get_extensions():
     debug_mode = os.getenv("DEBUG", "0") == "1"
-    use_cuda = os.getenv("USE_CUDA", "1" if torch.cuda.is_available() else "0") == "1"
+    #use_cuda = os.getenv("USE_CUDA", "1" if torch.cuda.is_available() else "0") == "1"
+    use_cuda = "1"
     use_metal = (
         os.getenv("USE_METAL", "1" if torch.backends.mps.is_available() else "0") == "1"
     )
